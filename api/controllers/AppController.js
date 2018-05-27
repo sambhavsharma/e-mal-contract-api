@@ -6,7 +6,7 @@
 module.exports = {
 
 	index: function(req, res){
-		return res.status(200).json({message: "Hello!"});
+		return res.status(200).json({message: Web3Service.eMalToken.totalSupply() });
 	}
 
 }
