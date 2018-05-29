@@ -4,9 +4,37 @@
 /////////////////
 
 Web3 = require('web3');
-var web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/'));
+var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545/'));
 
 var eMalTokenContract = web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "supply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
 	{
 		"constant": false,
 		"inputs": [
@@ -73,6 +101,34 @@ var eMalTokenContract = web3.eth.contract([
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "_totalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"name": "tokenOwner",
@@ -84,6 +140,20 @@ var eMalTokenContract = web3.eth.contract([
 			{
 				"name": "balance",
 				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
 			}
 		],
 		"payable": false,
@@ -137,6 +207,12 @@ var eMalTokenContract = web3.eth.contract([
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -181,7 +257,7 @@ var eMalTokenContract = web3.eth.contract([
 		"type": "event"
 	}
 ]);
-var eMalToken = eMalTokenContract.at("0xed8c7519ef31906a711cd739aa6df36705e8aab3");
+var eMalToken = eMalTokenContract.at("0x45c3c3981d59a7e20b119df8f32360ccaa11d993");
 
 var eMalPresaleContract = web3.eth.contract([
 	{
@@ -398,7 +474,26 @@ var eMalPresaleContract = web3.eth.contract([
 		"constant": false,
 		"inputs": [
 			{
-				"name": "addr",
+				"name": "new_owner",
+				"type": "address"
+			}
+		],
+		"name": "setOwner",
+		"outputs": [
+			{
+				"name": "success",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "token_addr",
 				"type": "address"
 			}
 		],
@@ -555,6 +650,20 @@ var eMalPresaleContract = web3.eth.contract([
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "presaleActive",
 		"outputs": [
 			{
@@ -586,7 +695,11 @@ var eMalPresaleContract = web3.eth.contract([
 		"type": "function"
 	}
 ]);
-var eMalPresale = eMalPresaleContract.at("0x0883f35fe18352d35cbad3d7c6e2bee7b1088637");
+var eMalPresale = eMalPresaleContract.at("0x5c6e6407cec70f5ed81c07d01254bd7e0eaa0730");
+
+// Setting token in the presale contract. Make sure that owner of the presale contract is changed already
+Web3Service.eMalPresale._eth.defaultAccount = Web3Service.web3.eth.accounts[0];
+Web3Service.eMalPresale.setToken("0x45c3c3981d59a7e20b119df8f32360ccaa11d993");
 
 module.exports = {
 	web3: web3,
