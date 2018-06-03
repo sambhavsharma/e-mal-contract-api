@@ -4,7 +4,7 @@
 /////////////////
 
 Web3 = require('web3');
-var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545/'));
+var web3 = new Web3(new Web3.providers.HttpProvider(sails.config.properties.web3_http_provider));
 
 var eMalTokenContract = web3.eth.contract([
 	{
@@ -257,7 +257,7 @@ var eMalTokenContract = web3.eth.contract([
 		"type": "event"
 	}
 ]);
-var eMalToken = eMalTokenContract.at("0xe3dae113d127142af2e005ad700a0c9b93f458e3");
+var eMalToken = eMalTokenContract.at(sails.config.properties.emal_token_address);
 
 var eMalPresaleContract = web3.eth.contract([
 	{
@@ -695,13 +695,13 @@ var eMalPresaleContract = web3.eth.contract([
 		"type": "function"
 	}
 ]);
-var eMalPresale = eMalPresaleContract.at("0x511378afbed031ae37ce4b2b5ae0233ba1af1816");
+var eMalPresale = eMalPresaleContract.at(sails.config.properties.emal_presale_address);
 
 // Setting token in the presale contract. Make sure that owner of the presale contract is changed already
 eMalPresale._eth.defaultAccount = web3.eth.accounts[0];
 sails.log("Default Address: " + web3.eth.accounts[0]);
 
-setTokenTr = eMalPresale.setToken.sendTransaction("0x1f1a3618e7cc5bf64f0374a8785f4276bac2f3b4");
+setTokenTr = eMalPresale.setToken.sendTransaction(sails.config.properties.emal_token_address);
 sails.log("Set token transaction: " + setTokenTr);
 
 module.exports = {
