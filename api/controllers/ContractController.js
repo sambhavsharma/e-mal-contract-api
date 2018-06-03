@@ -6,6 +6,14 @@
 module.exports = {
 
     // Fetches ether invsted from an investor address
+    get_total_ether_invested: function(req, res){
+        total_invested_amount = Web3Service.eMalPresale.totalEtherInvested();
+
+        return res.status(200).json({status: 'success', 
+            total_invested_amount: Web3Service.web3.fromWei(total_invested_amount)});
+    },
+
+    // Fetches ether invsted from an investor address
     get_ether_invested: function(req, res){
         invested_amount = Web3Service.eMalPresale.getInvestedAmount(req.param('investor_addr'));
         return res.status(200).json({status: 'success', 

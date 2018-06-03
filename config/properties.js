@@ -1,7 +1,7 @@
 module.exports.properties = {
     web3_http_provider: 'http://localhost:8545/',
-    emal_token_address: '0xb193e59ab45b5d54955b244984fd676befb4633d',
-    emal_presale_address: '0xb9f11769587db933f766e7bdbcfb0c2580881186',
+    emal_token_address: '0xf01b68367fa18e2eeef9413a0baa74bbac5f5375',
+    emal_presale_address: '0x3e618f422882be4cf7380c9a9cf3c0634a00125e',
     token_contract_abi: [
         {
             "constant": true,
@@ -255,265 +255,6 @@ module.exports.properties = {
     ],
     presale_contract_abi: [
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "name": "investor",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "tokenCount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "sentAllocatedTokens",
-            "type": "event"
-        },
-        {
-            "constant": false,
-            "inputs": [],
-            "name": "activatePresale",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                }
-            ],
-            "name": "addToWhitelist",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                }
-            ],
-            "name": "addWhitelistInvstor",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                },
-                {
-                    "name": "tokenCount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "allocateTokens",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [],
-            "name": "deactivatePresale",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                },
-                {
-                    "name": "tokenCount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "deductAllocatedTokens",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                }
-            ],
-            "name": "removeFromWhitelist",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "name": "investor",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "tokenCount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "allocatedTokens",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "name": "investor",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "etherInvested",
-            "type": "event"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                }
-            ],
-            "name": "removeWhitelistInvstor",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "investorAddr",
-                    "type": "address"
-                }
-            ],
-            "name": "sendInvestmentsToCrowdsale",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "new_owner",
-                    "type": "address"
-                }
-            ],
-            "name": "setOwner",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "name": "token_addr",
-                    "type": "address"
-                }
-            ],
-            "name": "setToken",
-            "outputs": [
-                {
-                    "name": "success",
-                    "type": "bool"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "payable": true,
-            "stateMutability": "payable",
-            "type": "fallback"
-        },
-        {
-            "inputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "constructor"
-        },
-        {
             "constant": true,
             "inputs": [
                 {
@@ -521,26 +262,7 @@ module.exports.properties = {
                     "type": "address"
                 }
             ],
-            "name": "allocatedTokens",
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "name": "allocatedTokensSent",
+            "name": "investedAmounts",
             "outputs": [
                 {
                     "name": "",
@@ -585,6 +307,63 @@ module.exports.properties = {
             "type": "function"
         },
         {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "new_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "setOwner",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "token_addr",
+                    "type": "address"
+                }
+            ],
+            "name": "setToken",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "allocatedTokens",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
             "constant": true,
             "inputs": [
                 {
@@ -604,22 +383,36 @@ module.exports.properties = {
             "type": "function"
         },
         {
-            "constant": true,
+            "constant": false,
             "inputs": [
                 {
-                    "name": "",
+                    "name": "investorAddr",
                     "type": "address"
                 }
             ],
-            "name": "investedAmounts",
+            "name": "removeWhitelistInvstor",
             "outputs": [
                 {
-                    "name": "",
-                    "type": "uint256"
+                    "name": "success",
+                    "type": "bool"
                 }
             ],
             "payable": false,
-            "stateMutability": "view",
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "deactivatePresale",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -644,11 +437,11 @@ module.exports.properties = {
         {
             "constant": true,
             "inputs": [],
-            "name": "owner",
+            "name": "presaleActive",
             "outputs": [
                 {
                     "name": "",
-                    "type": "address"
+                    "type": "bool"
                 }
             ],
             "payable": false,
@@ -656,13 +449,83 @@ module.exports.properties = {
             "type": "function"
         },
         {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "investorAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "addWhitelistInvstor",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "constant": true,
             "inputs": [],
-            "name": "presaleActive",
+            "name": "totalEtherInvested",
             "outputs": [
                 {
                     "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "investorAddr",
+                    "type": "address"
+                },
+                {
+                    "name": "tokenCount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "allocateTokens",
+            "outputs": [
+                {
+                    "name": "success",
                     "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "investorAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "removeFromWhitelist",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
                 }
             ],
             "payable": false,
@@ -687,6 +550,171 @@ module.exports.properties = {
             "payable": false,
             "stateMutability": "view",
             "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "allocatedTokensSent",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "investorAddr",
+                    "type": "address"
+                },
+                {
+                    "name": "tokenCount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "deductAllocatedTokens",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [],
+            "name": "activatePresale",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "investorAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "sendInvestmentsToCrowdsale",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "totalTokensAllocated",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "investorAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "addToWhitelist",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "fallback"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "investor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "etherInvested",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "investor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokenCount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "allocatedTokens",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "investor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokenCount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sentAllocatedTokens",
+            "type": "event"
         }
     ]
 };
