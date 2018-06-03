@@ -5,6 +5,13 @@
  */
 module.exports = {
 
+    // Fetches ether invsted from an investor address
+    get_ether_invested: function(req, res){
+        invested_amount = Web3Service.eMalPresale.getInvestedAmount(req.param('investor_addr'));
+        return res.status(200).json({status: 'success', 
+            invested_amount: Web3Service.web3.fromWei(invested_amount)});
+    },
+
     // Get activation status for presale
     get_activation_status: function(req, res){
         activation_status = Web3Service.eMalPresale.presaleActive();

@@ -12,6 +12,7 @@ module.exports.routes = {
   'get /': 'AppController.index',
 
   // Contract Controller Routes
+  'get /ether-invested': 'ContractController.get_ether_invested',
   'get /activation-status': 'ContractController.get_activation_status',
   'post /activate': 'ContractController.activate',
   'post /deactivate': 'ContractController.deactivate',
