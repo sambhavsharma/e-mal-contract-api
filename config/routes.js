@@ -9,5 +9,11 @@
  */
 
 module.exports.routes = {
-  'get /': 'AppController.index'
+  'get /': 'AppController.index',
+
+  // Contract Controller Routes
+  'post /activate': 'ContractController.activate',
+  'post /deactivate': 'ContractController.deactivate',
+  'post /set-token': 'ContractController.set_token',
+  'post /set-owner': 'ContractController.set_owner',
 };
