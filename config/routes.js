@@ -24,4 +24,7 @@ module.exports.routes = {
   'post /allocation/deduct': 'AllocationController.deduct',
 
   // Whitelist Controller Routes
+  'get /whitelist/check': 'WhitelistController.check',
+  'post /whitelist/add': 'WhitelistController.add',
+  'post /whitelist/remove': 'WhitelistController.remove',
 };
