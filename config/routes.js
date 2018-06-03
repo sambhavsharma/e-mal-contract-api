@@ -17,4 +17,11 @@ module.exports.routes = {
   'post /deactivate': 'ContractController.deactivate',
   'post /set-token': 'ContractController.set_token',
   'post /set-owner': 'ContractController.set_owner',
+
+  // Allocation Controller Routes
+  'get /allocation/get-tokens': 'AllocationController.get_allocated_tokens',
+  'post /allocation/allocate': 'AllocationController.allocate',
+  'post /allocation/deduct': 'AllocationController.deduct',
+
+  // Whitelist Controller Routes
 };
