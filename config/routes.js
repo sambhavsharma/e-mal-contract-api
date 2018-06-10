@@ -30,4 +30,28 @@ module.exports.routes = {
   'get /whitelist/check/:investor_addr': 'WhitelistController.check',
   'post /whitelist/add': 'WhitelistController.add',
   'post /whitelist/remove': 'WhitelistController.remove',
+
+  /***************************/
+  /****** Public Sale ********/
+  /***************************/
+
+  // Contract Controller Routes
+  'get /publicsale/ether-invested': 'publicsale/ContractController.get_total_ether_invested',
+  'get /publicsale/ether-invested/:investor_addr': 'publicsale/ContractController.get_ether_invested',
+  'get /publicsale/activation-status': 'publicsale/ContractController.get_activation_status',
+  'post /publicsale/activate': 'publicsale/ContractController.activate',
+  'post /publicsale/deactivate': 'publicsale/ContractController.deactivate',
+  'post /publicsale/set-token': 'publicsale/ContractController.set_token',
+  'post /publicsale/set-owner': 'publicsale/ContractController.set_owner',
+
+  // Allocation Controller Routes
+  'get /publicsale/allocation/get-tokens': 'publicsale/AllocationController.get_total_allocated_tokens',
+  'get /publicsale/allocation/get-tokens/:investor_addr': 'publicsale/AllocationController.get_allocated_tokens',
+  'post /publicsale/allocation/allocate': 'publicsale/AllocationController.allocate',
+  'post /publicsale/allocation/deduct': 'publicsale/AllocationController.deduct',
+
+  // Whitelist Controller Routes
+  'get /publicsale/whitelist/check/:investor_addr': 'publicsale/WhitelistController.check',
+  'post /publicsale/whitelist/add': 'publicsale/WhitelistController.add',
+  'post /publicsale/whitelist/remove': 'publicsale/WhitelistController.remove'
 };

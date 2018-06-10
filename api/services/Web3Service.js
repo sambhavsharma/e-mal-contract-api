@@ -20,8 +20,20 @@ sails.log("Default Address: " + web3.eth.accounts[0]);
 setTokenTr = eMalPresale.setToken.sendTransaction(props.emal_token_address);
 sails.log("Set token transaction: " + setTokenTr);
 
+// Publicsale
+var eMalPublicsaleContract = web3.eth.contract(props.publicsale_contract_abi);
+var eMalPublicsale = eMalPublicContract.at(props.emal_publicsale_address);
+
+// Setting token in the publicsale contract. Make sure that owner of the publicsale contract is changed already
+eMalPublicsale._eth.defaultAccount = web3.eth.accounts[0];
+sails.log("Default Address: " + web3.eth.accounts[0]);
+
+setTokenTr = eMalPublicsale.setToken.sendTransaction(props.emal_token_address);
+sails.log("Set token transaction: " + setTokenTr);
+
 module.exports = {
 	web3: web3,
 	eMalToken: eMalToken,
-	eMalPresale: eMalPresale
+	eMalPresale: eMalPresale,
+    eMalPublicsale: eMalPublicsale
 }
